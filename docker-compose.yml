@@ -1,0 +1,38 @@
+version: "3"
+services:
+  #PHP Service
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-desafio-01
+    restart: unless-stopped
+    tty: true
+    working_dir: /var/www
+    volumes:
+      - ./src/:/var/www
+      - ./docker/php/conf.d/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+  #Nginx Service
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-desafio-01
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./src/:/var/www
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    depends_on:
+      - php
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge

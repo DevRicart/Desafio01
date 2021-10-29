@@ -1,0 +1,19 @@
+{
+    "name": "clyff/desafio-01",
+    "description": "Desafio em PHP",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "Clyff",
+            "email": "clyfford_robert@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
