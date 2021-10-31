@@ -46,8 +46,8 @@ O projeto pode ser acessado pela url `http://localhost`.
    Controlador::run();
    ```
 
-1. Existe muito conteúdo repitido nos arquivos da pasta `src/views`. Realize as seguintes mudanças:
+1. Existe muito conteúdo repetido nos arquivos da pasta `src/views`. Realize as seguintes mudanças:
    - Altere todos arquivos, deixe somente o que aparecerá naquela página (o conteúdo dentro do body)
-   - Crie o arquivo `src/views/layout.php`. Nele, deixe todo conteúdo repetitivo (tag head, início do body, fim do body, fom do html etc). E, dentro da tag body, exiba o conteudo de uma variável chamada `$content`.
+   - Crie o arquivo `src/views/layout.php`. Nele, deixe todo conteúdo repetitivo (tag head, início do body, fim do body, fim do html etc). E, dentro da tag body, exiba o conteúdo de uma variável chamada `$content`.
    - Na classe `Controlador`, crie uma lógica onde, ao invés de apenas chamar o arquivo em `src/views`, exibir o conteúdo do arquivo de layout criado. Sendo a variável `$content` o conteúdo dos arquivos originais.
 1. Faça melhorias no layout. Crie uma tag header, footer e dê uma cara melhor ao conteúdo da página.
