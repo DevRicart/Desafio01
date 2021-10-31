@@ -12,19 +12,18 @@ Repositório em PHP criado com o objetivo de propor desafios de programação. I
 Baixe o projeto:
 
 ```shell
-$ git clone git@github.com:Clyff/desafio-01.git
+git clone git@github.com:Clyff/desafio-01.git
 ```
 
 Acesse a pasta e suba os containers docker:
 
 ```shell
-$ cd desafio-01
-$ docker-compose up -d
+cd desafio-01 && docker-compose up -d
 ```
 
 ## Uso
 
-O projeto pode ser acessado pela url `http://localhost`.
+O projeto pode ser acessado pela url [http://localhost](http://localhost)
 
 ## Desafios Sugeridos
 
