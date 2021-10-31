@@ -7,11 +7,10 @@ services:
       dockerfile: Dockerfile
     container_name: php-desafio-01
     restart: unless-stopped
-    tty: true
+    command: bash -c "composer install && php-fpm"
     working_dir: /var/www
     volumes:
       - ./src/:/var/www
-      - ./docker/php/conf.d/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - app-network
 
