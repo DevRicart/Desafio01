@@ -14,9 +14,9 @@ class Controlador
   public function findMercadoria($busca) {
     $mercadorias = $this->getMercadorias();
 
-    if (isset($mercadorias[$busca])) {
+    if (isset($_GET)) {
       return $mercadorias[$busca];
-
+       
     } else {
       return [];
     }
@@ -24,24 +24,31 @@ class Controlador
    
   public function render($mercadoria) {
     if ($mercadoria == []) {
-      require_once(__DIR__ . '/../views/selecione.html');
-      
+      $content = require(__DIR__ . '/../views/selecione.html');
+      require_once(__DIR__ . '/../views/layout.php');
 
-    } else {
-      require_once(__DIR__ . '/../views/dados-mercadoria.php');    
+    } else if ($_GET) {
+      $mercadoria = new Mercadoria($mercadoria);
+      $content = require(__DIR__ . '/../views/dados-mercadoria.php');
+      require_once(__DIR__ . '/../views/layout.php'); 
     }
   }
   
   public static function run() {
     $controlador = new self();
 
-    if (isset($_GET)) {
-      $mercadoria = $controlador->findMercadoria('mercadoria');
-      print_r($mercadoria);
+    if (isset($_GET['mercadoria'])) {
+      $mercadoria = $controlador->findMercadoria($_GET['mercadoria']);
       $controlador->render($mercadoria);
       
-    } else {
-      require_once(__DIR__ . '/../views/404.html');
+    }
+    else if (isset($_GET)) {
+      $content = require(__DIR__ . '/../views/selecione.html');
+      require_once(__DIR__ . '/../views/layout.php');
+    } 
+    else {
+      $content = require(__DIR__ . '/../views/404.html');
+      require_once(__DIR__ . '/../views/layout.php');
     }
   }
 

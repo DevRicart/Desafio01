@@ -1,17 +1,8 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <title>Desafio 01</title>
-</head>
-<body class="antialiased font-sans bg-gray-200 overflow-hidden align-middle"><div class="" style="">
-  <div class="max-w-4xl mx-auto h-screen flex flex-wrap content-center">
-    <a href="/" class="py-2 px-4 bg-green-500 text-white shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
-      Voltar
-    </a>
-
+  <header class="mt-10 ml-96">  
+    <h1 class="text-6xl">Promoção dia dos pais!</h1>
+  </header>
+  <div class="max-w-4xl mx-auto pt-20 flex flex-wrap content-center justify-end">
+        
     <div class="bg-white shadow overflow-hidden sm:rounded-lg">
 
       <div class="px-4 py-5 sm:px-6">
@@ -68,8 +59,10 @@
           </div>
         </dl>
       </div>
+      
 
     </div>
+    <a href="/" class="rounded mt-4 py-2 px-4 bg-green-500 text-white shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
+      Voltar
+    </a>
   </div>
-</body>
-</html>
