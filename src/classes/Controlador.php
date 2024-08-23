@@ -14,41 +14,39 @@ class Controlador
   public function findMercadoria($busca) {
     $mercadorias = $this->getMercadorias();
 
-    if (isset($_GET)) {
+    if (array_key_exists($busca, $mercadorias)) { //TODO: verificar a existencia da chave $busca no array $mercadorias. (FOOOOOOOI)
       return $mercadorias[$busca];
        
     } else {
-      return [];
+      $content = file_get_contents(__DIR__ . '/../views/404.html');
+
+      require(__DIR__ . '/../views/layout.php'); // aqui cabe adicionar o 404 (fooooi)
     }
   }
    
   public function render($mercadoria) {
-    if ($mercadoria == []) {
-      $content = require(__DIR__ . '/../views/selecione.html');
-      require_once(__DIR__ . '/../views/layout.php');
-
-    } else if ($_GET) {
+ // nao precisa mais (feito)
+ // remover esse if todo (feito)
       $mercadoria = new Mercadoria($mercadoria);
-      $content = require(__DIR__ . '/../views/dados-mercadoria.php');
-      require_once(__DIR__ . '/../views/layout.php'); 
-    }
+      ob_start();
+      require(__DIR__ . '/../views/dados-mercadoria.php');
+      $content = ob_get_clean();
+      
+      require(__DIR__ . '/../views/layout.php');
   }
   
-  public static function run() {
-    $controlador = new self();
-
-    if (isset($_GET['mercadoria'])) {
-      $mercadoria = $controlador->findMercadoria($_GET['mercadoria']);
-      $controlador->render($mercadoria);
-      
+  public function run() {
+    if (isset($_GET['mercadoria'])) { // show (show)
+      $mercadoria = $this->findMercadoria($_GET['mercadoria']);
+      $this->render($mercadoria); 
     }
-    else if (isset($_GET)) {
-      $content = require(__DIR__ . '/../views/selecione.html');
-      require_once(__DIR__ . '/../views/layout.php');
+    else if ($_SERVER['REQUEST_URI'] == "/") { // caso a url não seja a padrão (somento o dominio)
+      $content = file_get_contents(__DIR__ . '/../views/selecione.html');
+      require(__DIR__ . '/../views/layout.php');
     } 
-    else {
-      $content = require(__DIR__ . '/../views/404.html');
-      require_once(__DIR__ . '/../views/layout.php');
+    else { // show (show)
+      $content = file_get_contents(__DIR__ . '/../views/404.html');
+      require(__DIR__ . '/../views/layout.php');
     }
   }
 

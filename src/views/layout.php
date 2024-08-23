@@ -8,15 +8,13 @@
   <title>Desafio 01</title>
 </head>
     <body class="antialiased font-sans bg-gray-200 overflow-hidden align-middle h-screen">
-
         <?= $content ?>
-
         <footer class="bg-white absolute bottom-0 w-screen h-52 text-center flex flex-col items-center">
-            <div class="border-t-2 border-black w-96 text-center py-6 mt-5">
-                <a href=""><i class="uil uil-instagram text-6xl"></i></a>
-                <a href=""><i class="uil uil-facebook-f text-6xl"></i></a>
-                <a href=""><i class="uil uil-twitter-alt text-6xl"></i></a>
-                <a href=""><i class="uil uil-youtube text-6xl"></i></a>
+            <div class="border-t-2 border-black w-96 text-center py-6 mt-5 flex justify-center gap-16">
+                <a href="" class="duration-300 transition-all transform hover:scale-90 hover:opacity-70"><i class="uil uil-instagram text-6xl"></i></a>
+                <a href="" class="duration-300 transition-all transform hover:scale-90 hover:opacity-70"><i class="uil uil-facebook-f text-6xl"></i></a>
+                <a href="" class="duration-300 transition-all transform hover:scale-90 hover:opacity-70"><i class="uil uil-twitter-alt text-6xl"></i></a>
+                <a href="" class="duration-300 transition-all transform hover:scale-90 hover:opacity-70"><i class="uil uil-youtube text-6xl"></i></a>
             </div>
             <p class="text-lg">Copyright ©2024 - Meu site</p>
         </footer>

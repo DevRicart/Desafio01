@@ -1,4 +1,4 @@
-  <header class="mt-10 ml-96">  
+<header class="mt-10 ml-96">  
     <h1 class="text-6xl">Promoção dia dos pais!</h1>
   </header>
   <div class="max-w-4xl mx-auto pt-20 flex flex-wrap content-center justify-end">
@@ -18,7 +18,9 @@
               Produto
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              <?= $mercadoria->nome ?>
+
+            <?= $mercadoria->nome ?>
+            
             </dd>
           </div>
 
@@ -27,7 +29,7 @@
               Valor
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              R$ <?= $mercadoria->valor ?>
+            R$ <?= $mercadoria->valor ?>
             </dd>
           </div>
 
@@ -36,7 +38,7 @@
               Peso
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              <?= $mercadoria->peso ?> kgs
+            <?= $mercadoria->peso ?> kgs
             </dd>
           </div>
 
@@ -45,7 +47,7 @@
               Categoria
             </dt>
             <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-              <?= $mercadoria->categoria->nome ?>
+            <?= $mercadoria->categoria->nome ?>
             </dd>
           </div>
 
